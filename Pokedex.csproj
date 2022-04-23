@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A434659-2893-40D3-A48E-DF77D01A05A1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Pokedex</RootNamespace>
+    <AssemblyName>Pokedex</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caught.cs" />
+    <Compile Include="frmPokedex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPokedex.Designer.cs">
+      <DependentUpon>frmPokedex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pokemonDataSet.cs">
+      <DependentUpon>pokemonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pokemonDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pokemonDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmPokedex.resx">
+      <DependentUpon>frmPokedex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="pokemonDataSet.xsc">
+      <DependentUpon>pokemonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pokemonDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pokemonDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pokemonDataSet.xss">
+      <DependentUpon>pokemonDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pokedex.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pokedex2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sprites\1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PokemonSymbol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pokemon.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pokemon_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>pokemon.mdf</DependentUpon>
+    </Content>
+    <None Include="sprites\251.gif" />
+    <None Include="sprites\250.gif" />
+    <None Include="sprites\249.gif" />
+    <None Include="sprites\248.gif" />
+    <None Include="sprites\247.gif" />
+    <None Include="sprites\246.gif" />
+    <None Include="sprites\245.gif" />
+    <None Include="sprites\244.gif" />
+    <None Include="sprites\243.gif" />
+    <None Include="sprites\242.gif" />
+    <None Include="sprites\241.gif" />
+    <None Include="sprites\240.gif" />
+    <None Include="sprites\239.gif" />
+    <None Include="sprites\238.gif" />
+    <None Include="sprites\237.gif" />
+    <None Include="sprites\236.gif" />
+    <None Include="sprites\235.gif" />
+    <None Include="sprites\234.gif" />
+    <None Include="sprites\233.gif" />
+    <None Include="sprites\232.gif" />
+    <None Include="sprites\231.gif" />
+    <None Include="sprites\230.gif" />
+    <None Include="sprites\229.gif" />
+    <None Include="sprites\228.gif" />
+    <None Include="sprites\227.gif" />
+    <None Include="sprites\226.gif" />
+    <None Include="sprites\225.gif" />
+    <None Include="sprites\224.gif" />
+    <None Include="sprites\223.gif" />
+    <None Include="sprites\222.gif" />
+    <None Include="sprites\221.gif" />
+    <None Include="sprites\220.gif" />
+    <None Include="sprites\219.gif" />
+    <None Include="sprites\218.gif" />
+    <None Include="sprites\217.gif" />
+    <None Include="sprites\216.gif" />
+    <None Include="sprites\215.gif" />
+    <None Include="sprites\214.gif" />
+    <None Include="sprites\213.gif" />
+    <None Include="sprites\212.gif" />
+    <None Include="sprites\211.gif" />
+    <None Include="sprites\210.gif" />
+    <None Include="sprites\209.gif" />
+    <None Include="sprites\208.gif" />
+    <None Include="sprites\207.gif" />
+    <None Include="sprites\206.gif" />
+    <None Include="sprites\205.gif" />
+    <None Include="sprites\204.gif" />
+    <None Include="sprites\203.gif" />
+    <None Include="sprites\202.gif" />
+    <None Include="sprites\201.gif" />
+    <None Include="sprites\200.gif" />
+    <None Include="sprites\199.gif" />
+    <None Include="sprites\198.gif" />
+    <None Include="sprites\197.gif" />
+    <None Include="sprites\196.gif" />
+    <None Include="sprites\195.gif" />
+    <None Include="sprites\194.gif" />
+    <None Include="sprites\193.gif" />
+    <None Include="sprites\192.gif" />
+    <None Include="sprites\191.gif" />
+    <None Include="sprites\190.gif" />
+    <None Include="sprites\189.gif" />
+    <None Include="sprites\188.gif" />
+    <None Include="sprites\187.gif" />
+    <None Include="sprites\186.gif" />
+    <None Include="sprites\185.gif" />
+    <None Include="sprites\184.gif" />
+    <None Include="sprites\183.gif" />
+    <None Include="sprites\182.gif" />
+    <None Include="sprites\181.gif" />
+    <None Include="sprites\180.gif" />
+    <None Include="sprites\179.gif" />
+    <None Include="sprites\178.gif" />
+    <None Include="sprites\177.gif" />
+    <None Include="sprites\176.gif" />
+    <None Include="sprites\175.gif" />
+    <None Include="sprites\174.gif" />
+    <None Include="sprites\173.gif" />
+    <None Include="sprites\172.gif" />
+    <None Include="sprites\171.gif" />
+    <None Include="sprites\170.gif" />
+    <None Include="sprites\169.gif" />
+    <None Include="sprites\168.gif" />
+    <None Include="sprites\167.gif" />
+    <None Include="sprites\166.gif" />
+    <None Include="sprites\165.gif" />
+    <None Include="sprites\164.gif" />
+    <None Include="sprites\163.gif" />
+    <None Include="sprites\162.gif" />
+    <None Include="sprites\161.gif" />
+    <None Include="sprites\160.gif" />
+    <None Include="sprites\159.gif" />
+    <None Include="sprites\158.gif" />
+    <None Include="sprites\157.gif" />
+    <None Include="sprites\156.gif" />
+    <None Include="sprites\155.gif" />
+    <None Include="sprites\154.gif" />
+    <None Include="sprites\153.gif" />
+    <None Include="sprites\152.gif" />
+    <None Include="sprites\151.gif" />
+    <None Include="sprites\150.gif" />
+    <None Include="sprites\149.gif" />
+    <None Include="sprites\148.gif" />
+    <None Include="sprites\147.gif" />
+    <None Include="sprites\146.gif" />
+    <None Include="sprites\145.gif" />
+    <None Include="sprites\144.gif" />
+    <None Include="sprites\143.gif" />
+    <None Include="sprites\142.gif" />
+    <None Include="sprites\141.gif" />
+    <None Include="sprites\140.gif" />
+    <None Include="sprites\139.gif" />
+    <None Include="sprites\138.gif" />
+    <None Include="sprites\137.gif" />
+    <None Include="sprites\136.gif" />
+    <None Include="sprites\135.gif" />
+    <None Include="sprites\134.gif" />
+    <None Include="sprites\133.gif" />
+    <None Include="sprites\132.gif" />
+    <None Include="sprites\131.gif" />
+    <None Include="sprites\130.gif" />
+    <None Include="sprites\129.gif" />
+    <None Include="sprites\128.gif" />
+    <None Include="sprites\127.gif" />
+    <None Include="sprites\126.gif" />
+    <None Include="sprites\125.gif" />
+    <None Include="sprites\124.gif" />
+    <None Include="sprites\123.gif" />
+    <None Include="sprites\122.gif" />
+    <None Include="sprites\121.gif" />
+    <None Include="sprites\120.gif" />
+    <None Include="sprites\119.gif" />
+    <None Include="sprites\118.gif" />
+    <None Include="sprites\117.gif" />
+    <None Include="sprites\116.gif" />
+    <None Include="sprites\115.gif" />
+    <None Include="sprites\114.gif" />
+    <None Include="sprites\113.gif" />
+    <None Include="sprites\112.gif" />
+    <None Include="sprites\111.gif" />
+    <None Include="sprites\110.gif" />
+    <None Include="sprites\109.gif" />
+    <None Include="sprites\108.gif" />
+    <None Include="sprites\107.gif" />
+    <None Include="sprites\106.gif" />
+    <None Include="sprites\105.gif" />
+    <None Include="sprites\104.gif" />
+    <None Include="sprites\103.gif" />
+    <None Include="sprites\102.gif" />
+    <None Include="sprites\101.gif" />
+    <None Include="sprites\100.gif" />
+    <None Include="sprites\99.gif" />
+    <None Include="sprites\98.gif" />
+    <None Include="sprites\97.gif" />
+    <None Include="sprites\96.gif" />
+    <None Include="sprites\95.gif" />
+    <None Include="sprites\94.gif" />
+    <None Include="sprites\93.gif" />
+    <None Include="sprites\92.gif" />
+    <None Include="sprites\91.gif" />
+    <None Include="sprites\90.gif" />
+    <None Include="sprites\89.gif" />
+    <None Include="sprites\88.gif" />
+    <None Include="sprites\87.gif" />
+    <None Include="sprites\86.gif" />
+    <None Include="sprites\85.gif" />
+    <None Include="sprites\84.gif" />
+    <None Include="sprites\83.gif" />
+    <None Include="sprites\82.gif" />
+    <None Include="sprites\81.gif" />
+    <None Include="sprites\80.gif" />
+    <None Include="sprites\79.gif" />
+    <None Include="sprites\78.gif" />
+    <None Include="sprites\77.gif" />
+    <None Include="sprites\76.gif" />
+    <None Include="sprites\75.gif" />
+    <None Include="sprites\74.gif" />
+    <None Include="sprites\73.gif" />
+    <None Include="sprites\72.gif" />
+    <None Include="sprites\71.gif" />
+    <None Include="sprites\70.gif" />
+    <None Include="sprites\69.gif" />
+    <None Include="sprites\68.gif" />
+    <None Include="sprites\67.gif" />
+    <None Include="sprites\66.gif" />
+    <None Include="sprites\65.gif" />
+    <None Include="sprites\64.gif" />
+    <None Include="sprites\63.gif" />
+    <None Include="sprites\62.gif" />
+    <None Include="sprites\61.gif" />
+    <None Include="sprites\60.gif" />
+    <None Include="sprites\59.gif" />
+    <None Include="sprites\58.gif" />
+    <None Include="sprites\57.gif" />
+    <None Include="sprites\56.gif" />
+    <None Include="sprites\55.gif" />
+    <None Include="sprites\54.gif" />
+    <None Include="sprites\53.gif" />
+    <None Include="sprites\52.gif" />
+    <None Include="sprites\51.gif" />
+    <None Include="sprites\50.gif" />
+    <None Include="sprites\49.gif" />
+    <None Include="sprites\48.gif" />
+    <None Include="sprites\47.gif" />
+    <None Include="sprites\46.gif" />
+    <None Include="sprites\45.gif" />
+    <None Include="sprites\44.gif" />
+    <None Include="sprites\43.gif" />
+    <None Include="sprites\42.gif" />
+    <None Include="sprites\41.gif" />
+    <None Include="sprites\40.gif" />
+    <None Include="sprites\39.gif" />
+    <None Include="sprites\38.gif" />
+    <None Include="sprites\37.gif" />
+    <None Include="sprites\36.gif" />
+    <None Include="sprites\35.gif" />
+    <None Include="sprites\34.gif" />
+    <None Include="sprites\33.gif" />
+    <None Include="sprites\32.gif" />
+    <None Include="sprites\31.gif" />
+    <None Include="sprites\30.gif" />
+    <None Include="sprites\29.gif" />
+    <None Include="sprites\28.gif" />
+    <None Include="sprites\27.gif" />
+    <None Include="sprites\26.gif" />
+    <None Include="sprites\25.gif" />
+    <None Include="sprites\24.gif" />
+    <None Include="sprites\23.gif" />
+    <None Include="sprites\22.gif" />
+    <None Include="sprites\21.gif" />
+    <None Include="sprites\20.gif" />
+    <None Include="sprites\19.gif" />
+    <None Include="sprites\18.gif" />
+    <None Include="sprites\17.gif" />
+    <None Include="sprites\16.gif" />
+    <None Include="sprites\15.gif" />
+    <None Include="sprites\14.gif" />
+    <None Include="sprites\13.gif" />
+    <None Include="sprites\12.gif" />
+    <None Include="sprites\11.gif" />
+    <None Include="sprites\10.gif" />
+    <None Include="sprites\9.gif" />
+    <None Include="sprites\8.gif" />
+    <None Include="sprites\7.gif" />
+    <None Include="sprites\6.gif" />
+    <None Include="sprites\5.gif" />
+    <None Include="sprites\4.gif" />
+    <None Include="sprites\3.gif" />
+    <None Include="sprites\2.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
